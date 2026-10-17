@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manaus Jóias | Joias personalizadas e joalheria 3D</title>
+  <meta name="description" content="Manaus Jóias: joias personalizadas, design 3D e ourivesaria. Crie a sua peça exclusiva.">
+  <style>
+    :root {
+      --preto: #0d0d0d;
+      --grafite: #1c1c1e;
+      --prata: #c9ccd1;
+      --branco: #f7f5f2;
+      --cinza: #8a8d93;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: var(--preto);
+      color: var(--branco);
+      line-height: 1.6;
+    }
+    img { display: block; width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 6%;
+      background: rgba(13, 13, 13, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #222;
+    }
+    .logo { font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--prata); }
+    nav a { margin-left: 24px; font-size: 0.9rem; color: var(--cinza); }
+    nav a:hover { color: var(--branco); }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      padding: 80px 6%;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      line-height: 1.1;
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+    .hero h1 strong { font-weight: 700; color: var(--prata); }
+    .hero p { color: var(--cinza); max-width: 480px; margin-bottom: 32px; font-size: 1.05rem; }
+    .hero-img { border-radius: 18px; overflow: hidden; aspect-ratio: 9 / 16; max-height: 640px; justify-self: center; }
+    .hero-img img { height: 100%; object-fit: cover; }
+
+    .btn {
+      display: inline-block;
+      padding: 16px 32px;
+      border-radius: 999px;
+      background: var(--prata);
+      color: var(--preto);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .btn:hover { background: var(--branco); }
+    .btn-outline {
+      background: transparent;
+      color: var(--branco);
+      border: 1px solid #444;
+      margin-left: 12px;
+    }
+    .btn-outline:hover { border-color: var(--prata); }
+
+    section { padding: 80px 6%; }
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 300;
+      margin-bottom: 12px;
+    }
+    .section-sub { text-align: center; color: var(--cinza); margin-bottom: 48px; }
+
+    .colecao {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: var(--grafite);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .card img { aspect-ratio: 9 / 16; object-fit: cover; }
+    .card-body { padding: 20px; }
+    .card-body h3 { font-weight: 500; margin-bottom: 6px; }
+    .card-body p { color: var(--cinza); font-size: 0.92rem; margin-bottom: 14px; }
+    .card-body a { color: var(--prata); font-size: 0.92rem; font-weight: 600; }
+
+    .diferenciais {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 28px;
+      background: var(--grafite);
+    }
+    .diferenciais > div { text-align: center; padding: 10px; }
+    .diferenciais h3 { color: var(--prata); font-weight: 500; margin-bottom: 8px; font-size: 1.1rem; }
+    .diferenciais p { color: var(--cinza); font-size: 0.95rem; }
+
+    .passos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      counter-reset: passo;
+    }
+    .passo {
+      border-top: 1px solid #333;
+      padding-top: 20px;
+    }
+    .passo span {
+      display: inline-block;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      color: var(--cinza);
+      margin-bottom: 8px;
+    }
+    .passo h3 { font-weight: 500; margin-bottom: 6px; }
+    .passo p { color: var(--cinza); font-size: 0.95rem; }
+
+    .contato { text-align: center; background: var(--grafite); }
+    .contato p { color: var(--cinza); max-width: 560px; margin: 0 auto 32px; }
+
+    footer {
+      padding: 32px 6%;
+      text-align: center;
+      color: var(--cinza);
+      font-size: 0.85rem;
+      border-top: 1px solid #222;
+    }
+
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; text-align: center; padding: 56px 6%; }
+      .hero p { margin-left: auto; margin-right: auto; }
+      .hero-img { max-height: 520px; }
+      nav { display: none; }
+      .btn-outline { margin-left: 0; margin-top: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Manaus Jóias</div>
+    <nav>
+      <a href="#colecao">Coleção</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <h1>Joias feitas para <strong>a sua história</strong></h1>
+        <p>Joias personalizadas com design 3D e ourivesaria cuidadosa. Cada peça é pensada para você, do desenho à entrega.</p>
+        <a class="btn" href="#contato">Quero a minha joia</a>
+        <a class="btn btn-outline" href="#colecao">Ver coleção</a>
+      </div>
+      <div class="hero-img">
+        <img src="img/anel.jpg" alt="Anel de prata com pedra preta facetada">
+      </div>
+    </section>
+
+    <section id="colecao">
+      <h2 class="section-title">Coleção</h2>
+      <p class="section-sub">Peças em destaque. Sob encomenda, personalizamos o modelo para você.</p>
+      <div class="colecao">
+        <article class="card">
+          <img src="img/anel.jpg" alt="Anel solitário com pedra preta">
+          <div class="card-body">
+            <h3>Anel Solitário</h3>
+            <p>Pedra preta facetada em engaste de garras, com aro liso e acabamento polido.</p>
+            <a href="#contato">Encomendar →</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="img/pingente.jpg" alt="Pingente oval com pedra preta">
+          <div class="card-body">
+            <h3>Pingente Oval</h3>
+            <p>Pedra preta polida em moldura de prata, com argola para corrente.</p>
+            <a href="#contato">Encomendar →</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="img/conjunto.jpg" alt="Conjunto de pingente e brincos com pedras pretas">
+          <div class="card-body">
+            <h3>Conjunto Pingente e Brincos</h3>
+            <p>Pingente e brincos combinando, com pedras pretas e moldura de prata.</p>
+            <a href="#contato">Encomendar →</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="img/brincos.jpg" alt="Brincos argola de prata com detalhe de pedra">
+          <div class="card-body">
+            <h3>Brincos Argola</h3>
+            <p>Argolas de prata com acabamento polido e detalhe de pedra.</p>
+            <a href="#contato">Encomendar →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="diferenciais" class="diferenciais">
+      <div>
+        <h3>Personalização</h3>
+        <p>Ajustamos modelo, tamanho e pedra para o seu gosto.</p>
+      </div>
+      <div>
+        <h3>Design 3D</h3>
+        <p>Você vê o projeto da joia antes de ela ser produzida.</p>
+      </div>
+      <div>
+        <h3>Ourivesaria</h3>
+        <p>Produção artesanal, com cuidado em cada acabamento.</p>
+      </div>
+    </section>
+
+    <section id="como-funciona">
+      <h2 class="section-title">Como funciona</h2>
+      <p class="section-sub">Do primeiro contato até a joia nas suas mãos.</p>
+      <div class="passos">
+        <div class="passo">
+          <span>01</span>
+          <h3>Conte sua ideia</h3>
+          <p>Envie uma foto de referência ou descreva a peça que você imagina.</p>
+        </div>
+        <div class="passo">
+          <span>02</span>
+          <h3>Aprove o design</h3>
+          <p>Criamos o projeto em 3D para você ajustar antes da produção.</p>
+        </div>
+        <div class="passo">
+          <span>03</span>
+          <h3>Produção</h3>
+          <p>A joia é feita pela nossa equipe de ourivesaria.</p>
+        </div>
+        <div class="passo">
+          <span>04</span>
+          <h3>Entrega</h3>
+          <p>Você recebe a sua peça pronta para usar ou presentear.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="contato">
+      <h2 class="section-title">Vamos criar a sua joia?</h2>
+      <p>Chame no WhatsApp para tirar dúvidas, pedir orçamento ou começar um projeto personalizado.</p>
+      <a class="btn" href="https://wa.me/SEUNUMEROAQUI">Chamar no WhatsApp</a>
+      <a class="btn btn-outline" href="https://www.instagram.com/manausjoiass/" target="_blank" rel="noopener">Ver no Instagram</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>Manaus Jóias · Joias personalizadas e joalheria 3D</p>
+    <p>© 2026 Manaus Jóias. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
